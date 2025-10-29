@@ -50,7 +50,7 @@ void *count02(void *arg) {
     for (;;) {
         pthread_mutex_lock(&condition_mutex);
         if (count < COUNT_HALT1 || count > COUNT_HALT2) {
-            pthread_cond_signal(&condition_cond); / indica al hilo en espera que esta en el rango
+            pthread_cond_signal(&condition_cond); // indica al hilo en espera que esta en el rango
         }
         pthread_mutex_unlock(&condition_mutex);
 
@@ -75,3 +75,4 @@ int main() {
 
     exit(0);
 }
+
